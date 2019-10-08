@@ -8,7 +8,11 @@ trigger:
 
 pool:
   vmImage: 'windows-latest'
-
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
 variables:
   solution: '**/*.sln'
   buildPlatform: 'x86|x64|ARM'
