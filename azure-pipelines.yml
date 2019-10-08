@@ -8,10 +8,8 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-- task: NuGetCommand@2
+
+- task: VisualStudioTestPlatformInstaller@1
   inputs:
-    command: 'restore'
-    restoreSolution: '**/*.sln'
-    feedsToUse: 'select'
-    vstsFeed: '27b28367-ddca-4944-8eb3-59e89788da2a'
-    includeNuGetOrg: false
+    packageFeedSelector: 'nugetOrg'
+    versionSelector: 'latestPreRelease'
