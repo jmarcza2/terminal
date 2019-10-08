@@ -8,11 +8,9 @@ trigger:
 
 pool:
   vmImage: 'windows-latest'
-- task: NuGetCommand@2
+- task: NuGetToolInstaller@1
   inputs:
-    command: 'restore'
-    restoreSolution: '**/*.sln'
-    feedsToUse: 'select'
+    versionSpec: 
 variables:
   solution: '**/*.sln'
   buildPlatform: 'x86|x64|ARM'
